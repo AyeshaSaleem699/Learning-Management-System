@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMS MCS</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="Styles/main.css">
+  <style>
+      #carouselExampleIndicators img{
+    
+  width: 100% !important;
+  height: 70vh !important;
+      }
+
+  
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-light" id="top-bar">
+        <div class="container-fluid justify-content-between">
+            <div class="float-left">
+                <a href="#" class="navbar-brand float-left" id="logo">
+                    <img src="Images/logoIcon.png" height="65"  width="65" id="logoIcon" alt="Logo of MCS">
+                    <img src="images/logoName.gif" height="65" width="130" id="logoName" alt="Learning Management System">
+                </a>
+            </div>
+
+            <div class="float-right" >
+               
+                  <a href="#" class="btn btn-primary" data-toggle="dropdown">Sign In</a>
+                    
+                <div id="demo" class="dropdown-menu dropdown-menu-right">
+                  <div class="container p-4">
+                    <form action="/authenticating_user" method="POST">
+                      <div class="form-group">
+                        <label for="uname">Username:</label>
+                        <input type="text" class="form-control" id="uname" placeholder="Enter Username" name="uname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Log In</button>
+                    </form>
+                  </div>
+                </div>
+
+             
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <br>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+
+                    <!-- indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                     
+                    </ol>
+
+                    <!-- images list -->
+                    <div class="carousel-inner" role="listbox">
+                      <div class="carousel-item active">
+                        <div class="img"><img class="d-block img-fluid" src="Images/Home Page Img 1.jpg" alt="First slide"></div>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>caption heading</h3>
+                            <p>add somthing here</p>
+                          </div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="img"><img class="d-block img-fluid" src="Images/Home Page Img 2.jpg" alt="Second slide"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="img"><img class="d-block img-fluid" src="Images/Home Page Img 3.jpg" alt="Third slide"></div>
+                      </div>
+                      <div class="carousel-item ">
+                        <div class="img"><img class="d-block img-fluid" src="Images/Home Page Img 4.jpg" alt="4th slide"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="img"><img class="d-block img-fluid" src="Images/Home Page Img 5.jpg" alt="5th slide"></div>
+                      </div>
+                      <div class="carousel-item">
+                        <div class="img"><img class="d-block img-fluid" src="Images/Home Page Img 6.jpg" alt="6th slide"></div>
+                        
+                      </div>
+                      <div class="carousel-item">
+                        <div class="img"><img class="d-block img-fluid" src="Images/Home Page Img 7.jpg" alt="7th slide"></div>
+                      </div>
+                    </div>
+
+                    <!-- next and prev button -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-4 my-4 card bg-dark">
+      <h3 class="text-center">LMS Statistics</h3>
+      <div class="row">
+        <div class="col-sm-12 col-md-3">
+          <div>
+            <div class="card mb-4 p-4">
+              <img class="card-img-top" width="50" height="50" src="Images/user.svg" alt="Card image cap">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Total Students</h5>
+                  <hr>
+                  <p class="card-text ">
+                      <span class="font-weight-bold">124</span><br>
+                  </p>
+              </div>
+          </div>
+          </div>
+      </div>
+
+          <div class="col-sm-12 col-md-3">
+            <div>
+              <div class="card mb-4 p-4">
+                <img class="card-img-top" width="50" height="50" src="Images/teacher.svg" alt="Card image cap">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Total Instructors</h5>
+                    <hr>
+                    <p class="card-text ">
+                        <span class="font-weight-bold">124</span><br>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-3">
+          <div>
+            <div class="card mb-4 p-4">
+              <img class="card-img-top" width="50" height="50" src="Images/courses.svg" alt="Card image cap">
+              <div class="card-body text-center">
+                  <h5 class="card-title">Total Courses</h5>
+                  <hr>
+                  <p class="card-text ">
+                      <span class="font-weight-bold">124</span><br>
+                  </p>
+              </div>
+          </div>
+          </div>
+      </div>
+
+      <div class="col-sm-12 col-md-3">
+        <div>
+          <div class="card mb-4 p-4">
+            <img class="card-img-top" width="50" height="50" src="Images/usergraduate.svg" alt="Card image cap">
+            <div class="card-body text-center">
+                <h5 class="card-title">Gradutes</h5>
+                <hr>
+                <p class="card-text ">
+                    <span class="font-weight-bold">124</span><br>
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+          
+        
+      </div>
+    </div>  
+    <div class="container-fluid text-center bg-dark p-4">
+      <div class="footer sticky-bottom">
+          <div class="row">
+              <div class="col">
+                  <ul class="navbar-nav">
+                      <h3>About</h3>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="#">Documentation</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="#">Terms & Conditions</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="#">Company</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <div class="col copyright">
+                    <br>
+                      <p class="text-white-50 font-weight-bold">AA Company</p>
+                      
+                      <p class="text-white-50">© 2019. All Rights Reserved.</small></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+</html>

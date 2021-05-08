@@ -1,0 +1,74 @@
+
+<body>
+    {{>header}}
+    <!-- <include src="./header.html"></include> -->
+    <!-- <div class="container-fluid" id="top-bar"> -->
+        <!-- can remove -md after expand here -->
+     
+
+        <nav class="navbar navbar-expand bg-light sticky-top" id="bottom-bar">
+            <div class="container-fluid justify-content-between">
+                <div class="float-left">
+                    <ul class="navbar-nav nav-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/dashboard">Back to Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="float-right" >
+                    <button role="button" type="button" class="btn" data-toggle="dropdown"> 
+                        <img class="" id="mobileMenu" width="30" height="30" src="Images/menuBtn.svg" alt="Open Navigation Menu">
+                    </button>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <a class="dropdown-item" href="/enrolled_courses">My Courses</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Notifications</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Mesages</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item active" href="/help_center">Help Center</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Log Out</a>
+                        <div class="dropdown-divider"></div>
+                      </div>
+                </div>
+            </div>
+        </nav>
+        
+            <div class="container">
+
+                <div class="card my-4">
+                    <!-- <img class="card-img-top mt-3" width="50" height="50" src="Images/user.svg" alt="Card image cap"> -->
+                    <div class="card-body">
+                        <h3 class="card-title">Problem in Operating LMS</h3>
+                        <hr>
+                        <p class="card-text">
+                            If you are facing any problem in operating the software visit the documentation.<br>
+                            link is given below....
+                        </p>
+                        <a href="#" class="btn btn-primary mb-4">Visit Documentation</a>
+                        
+
+                        <p class="card-text">
+                            If the issue is still not resolved contact our technical staff.
+                        </p>
+                        <a href="/ask_help" class="btn btn-primary">Contact Staff</a>
+                    </div>
+                </div>
+
+                
+                
+
+                
+
+            </div>
+            
+
+    {{>footer}}        
+</body>
+</html>
+<!-- style="display: inline-flex;" -->

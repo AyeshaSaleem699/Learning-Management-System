@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --primaryColor1: #fc5185;
+  --primaryColor2: #364f6b;
+  --primaryColor3: #43dde6;
+  --primaryColor4: #f0f0f0;
+}
+
+html,
+body {
+  font-family: "Poppins";
+  background: var(--primaryColor4);
+  /* color: var(--primaryColor4); */
+  margin: 0;
+}
+
+.top-navbar {
+  background: var(--primaryColor2);
+  padding: 1em;
+}
+
+.top-navbar .logo-icon {
+  width: 60px;
+  height: 60px;
+  padding-right: 0.75em;
+}
+
+.top-navbar .logo-name {
+  width: 140px;
+  height: 60px;
+}
+
+.top-navbar .user-icon {
+  width: 20px;
+  height: 20px;
+  /* padding-right: 1em; */
+}
+
+.top-navbar .container {
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  /* grid-template-columns: 180px 180px auto; */
+}
+
+.top-navbar .container div {
+  display: inline-flex;
+}
+
+.top-navbar .container .user-name {
+  padding: 10px;
+  font-size: 1.4em;
+  position: relative;
+}
+
+#iconContainer {
+  background: var(--primaryColor4);
+  width: 30px;
+  height: 30px;
+  margin-right: 0.3em;
+  border-radius: 50%;
+  background-position: center;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-image: url("../Images/user.svg");
+  /* to make the image inside the circle */
+  /* background-size: cover; */
+}
+
+a {
+  text-decoration: none;
+  color: var(--primaryColor4);
+}
+
+.bottom-navbar {
+  background: var(--primaryColor2);
+  padding: 1em;
+}
+
+.bottom-navbar nav {
+  /* by default for mobile view it is hidden */
+  display: none;
+}
+
+.bottom-navbar .container {
+  padding-right: 0.5em;
+  display: flex;
+  /* to add space between the content */
+  place-content: space-between;
+}
+
+.bottom-navbar .mobile-menu {
+  cursor: pointer;
+  width: 30px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+nav {
+  /* it helps make it stay on top */
+  position: fixed;
+  /* it is used for position fixed and absolute for high value to make sure it stays on top*/
+  z-index: 999;
+  width: 60%;
+  right: 0;
+  top: 0;
+  background: var(--primaryColor2);
+  /* vh is the vertical heigt of the device */
+  height: 100vh;
+}
+
+nav ul {
+  margin-top: 1.5em;
+}
+
+.bottom-navbar .container .primary-nav {
+  display: inline-flex;
+}
+
+.bottom-navbar li a {
+  color: var(--primaryColor4);
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+.menu-exit {
+  width: 30px;
+  float: right;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+.bottom-navbar .current {
+  color: var(--primaryColor2);
+  background: var(--primaryColor4);
+  font-weight: bold;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 5em;
+}
+
+.bottom-navbar li a:hover {
+  font-weight: bold;
+  background-color: var(--primaryColor1);
+  border: var(--primaryColor4);
+  margin-left: 1em;
+  border-radius: 5em;
+  margin-right: 1em;
+}
+
+section.recently-accessed-courses {
+  /* background: var(--primaryColor2); */
+  color: var(--primaryColor4);
+  /* width: 80%; */
+}
+
+section.recently-accessed-courses .container {
+  padding: 0.5em;
+  margin-top: 2em;
+}
+
+section.recently-accessed-courses li {
+  background: var(--primaryColor3);
+  text-align: center;
+  padding: 2em 1em;
+  width: 80%;
+  margin: 0 auto 5em auto;
+  border-radius: 1em;
+}
+
+section.recently-accessed-courses li img {
+  width: 5em;
+  height: 5em;
+  /* to make circle */
+  border-radius: 50%;
+  border: 5px solid #006bd6;
+  margin-top: -4.5em;
+}
+/*
+section.recently-accessed-courses img {
+  width: 75px;
+  height: 75px;
+} */
+
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 950px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: 5em 4em;
+  }
+
+  section.recently-accessed-courses ul {
+    display: flex;
+  }
+
+  section.recently-accessed-courses ul li {
+    margin: 0 1em;
+  }
+}

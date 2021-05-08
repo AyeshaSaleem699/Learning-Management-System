@@ -1,0 +1,217 @@
+
+
+     <style type="text/css">
+       #InsatndncNew , #InsatndncPrev{
+        background-color: #d95700;
+        color: white ;
+  }
+
+       #InsatndncNew:hover, #InsatndncPrev:hover{
+        
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
+}
+
+    </style> 
+
+<body>
+
+    {{>header}}
+    <!-- <div class="container-fluid" id="top-bar"> -->
+        <!-- can remove -md after expand here -->
+        
+
+        <nav class="navbar navbar-expand bg-light sticky-top" id="bottom-bar">
+            <div class="container-fluid justify-content-between">
+                <div class="float-left">
+                    <ul class="navbar-nav nav-tabs">
+                        <li class="nav-item">
+                          <a class="nav-link" href="/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/calender">Calender</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/weekly_statistics">Weekly Statistics</a>
+                          </li>
+                    </ul>
+                </div>
+
+                <div class="float-right" >
+                    <button role="button" type="button" class="btn" data-toggle="dropdown"> 
+                        <img class="" id="mobileMenu" width="30" height="30" src="Images/menuBtn.svg" alt="Open Navigation Menu">
+                    </button>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <a class="dropdown-item active" href="/enrolled_courses">My Courses</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Grades</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Notifications</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Mesages</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/help_center">Help Center</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Log Out</a>
+                        <div class="dropdown-divider"></div>
+                      </div>
+                </div>
+            </div>
+        </nav>
+<br><br><br>
+<div align="center">
+                <label style= "color: #5a6268; font-weight: bold" >BESE-24C</label> 
+                <br>
+                <label style= "color: #5a6268; font-weight: bold;">Artificial Intelligence</label>
+            </div> <br><br>
+   {{#if teacher}}       
+        <nav>
+
+            
+            <div align="center" class="container-fluid justify-content-between" style="width: 350px;">
+                
+                    <ul class="navbar-nav nav-tabs">
+                        
+                        <li class="nav-item" style="margin-top: 10px;"> 
+                           <a href="/instructor_view_attendance" class="nav-link" id="InsatndncPrev">View Attendance</a>
+                        </li>
+                        
+                    </ul> 
+                
+            </div>
+             <br> <br><br>
+            
+
+            <div class="dateDiv" align="center" style= "color: #5a6268">
+            <label style="margin-right: 5px;">Date</label>
+            <input style="color: #d95700" type="date" name="dateTime">
+        </div>   
+        <br> <br>
+
+
+        <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sr No.</th>
+            <th scope="col">Student Id</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Present</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td> 1. </td>
+            <td>000221</td>
+            <td>Aliya Fatima</td>
+            <td>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1" checked="ture">
+                  <label class="custom-control-label" for="customCheck1"></label>
+              </div>
+            </td>
+            
+          </tr>
+
+
+          <tr>
+            <td>2.</td>
+            <td>000222</td>
+            <td>Ayesha Saleem</td>
+            
+            <td>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck2" checked="ture">
+                  <label class="custom-control-label" for="customCheck3"></label>
+              </div>
+            </td>
+           
+          </tr>
+
+
+          <tr>
+            <td>3.</td>
+            <td>000223</td>
+            <td>Momina Ali</td>
+            
+            <td>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck3" checked="ture">
+                  <label class="custom-control-label" for="customCheck3"></label>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table> <br>
+      
+      <button style="background-color: #d95700; color: white; ">Submit</button>
+    </div>
+
+  </div>
+</div>
+{{/if}}
+
+{{#if student}}
+
+
+
+
+        <div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Sr No.</th>
+            <th scope="col">Date</th>
+            <th scope="col">Attendance Status</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td> 1. </td>
+            <td>13/3/2021</td>
+            <td>Present</td>
+            <td><a  href="/report_attendence" style="color: #d95700;">Report</a> </td>
+            
+          </tr>
+
+
+          <tr>
+            <td> 2. </td>
+            <td>13/3/2021</td>
+            <td>Absent</td>
+            <td><a  href="/report_attendence" style="color: #d95700;">Report</a> </td>
+           
+          </tr>
+
+
+          <tr>
+            <td> 3. </td>
+            <td>13/3/2021</td>
+            <td>Present</td>
+            <td> <a  href="/report_attendance" style="color: #d95700;">Report</a> </td>
+
+          </tr>
+        </tbody>
+      </table> <br>
+     <button style="background-color: #d95700;"> <a href="/course_dashboard" style="color: white; ">Back </button>
+    </div>
+  </div>
+</div>
+
+{{/if}}
+<br><br><br>
+{{>footer}}
+           
+</body>
+</html>

@@ -1,0 +1,268 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+
+{{>header}}
+
+<nav class="navbar navbar-expand bg-light sticky-top" id="bottom-bar">
+    <div class="container-fluid justify-content-between">
+        <div class="float-left">
+            <ul class="navbar-nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/calender">Calender</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Weekly Statistics</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="float-right">
+            <button role="button" type="button" class="btn" data-toggle="dropdown">
+                <img class="" id="mobileMenu" width="30" height="30" src="Images/menuBtn.svg"
+                    alt="Open Navigation Menu">
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                <a class="dropdown-item" href="/enrolled_courses">My Courses</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/profile">Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Notifications</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Mesages</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/help_center">Help Center</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Log Out</a>
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+    </div>
+</nav>
+{{#if admin}}
+<div class="container-fluid p-4">
+    <h1>Statistics</h1>
+
+    <div class="card m-5 p-5">
+        <canvas id="stdChrt" height="300"></canvas>
+    </div>
+    <div class="card p-5 m-5">
+        <canvas id="teacherhascourses" height="300"></canvas>
+    </div>
+
+
+    <!--            
+            <div class="col-sm-12 col-md-4 my-5">
+                <canvas id="assignmentsChart" height="300"></canvas>
+            </div>
+            <div class="col-sm-12 col-md-4 my-5">
+                <canvas id="quizesChart" height="300"></canvas>
+        </div> -->
+</div>
+
+<script type="text/javascript">
+    //global options
+    Chart.defaults.global.defaultFontFamily = "lato";
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = "#777";
+
+    //Students Chart
+    var ctx = document.getElementById('stdChrt').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["BESE-23", "BESE-24", "BESE-25", "BESE-26"],
+            datasets: [{
+                label: "Students in batches",
+                data: [[0, 5], 3, 2, 2],
+                backgroundColor: ["green", "red", "blue", "pink"],
+                borderWidth: 4,
+                borderColor: "#777",
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: ["lightgreen", "orange", "lightblue", "red"]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Students in batches",
+                fontSize: 25
+            },
+            legend: {
+                display: false,
+
+
+            }
+        }
+    });
+
+    //teachers Chart
+    var ctxa = document.getElementById('teacherhascourses').getContext('2d');
+    var charta = new Chart(ctxa, {
+        type: 'bar',
+        data: {
+            labels: ["Ayesha Naeem", "Ali Murtaza", "Sadia Zulfiqar", "Mohsin Ali"],
+            datasets: [{
+                label: "intructors teaching courses",
+                data: [3, 3, 3, 3],
+                backgroundColor: ["green", "red", "blue", "pink"],
+                borderWidth: 4,
+                borderColor: "#777",
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: ["lightgreen", "orange", "lightblue", "red"]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "intructors teaching courses",
+                fontSize: 25
+            },
+            legend: {
+                display: false,
+            }
+        }
+    });
+
+
+
+
+
+
+
+
+</script>
+
+{{/if}}
+
+
+{{#if other}}
+<div class="container-fluid p-4">
+    <h1>Statistics of this Week</h1>
+    <div class="row">
+        <div class="col-sm-12 col-md-4 mb-5">
+            <canvas id="attendenceChart" height="300"></canvas>
+        </div>
+        <div class="col-sm-12 col-md-4 my-5">
+            <canvas id="assignmentsChart" height="300"></canvas>
+        </div>
+        <div class="col-sm-12 col-md-4 my-5">
+            <canvas id="quizesChart" height="300"></canvas>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //global options
+    Chart.defaults.global.defaultFontFamily = "lato";
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = "#777";
+
+    //attendence Chart
+    var ctx = document.getElementById('attendenceChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ["Attended", "Missed", "Late"],
+            datasets: [{
+                label: "Attendence",
+                data: [30, 5, 7],
+                backgroundColor: ["green", "red", "blue"],
+                borderWidth: 4,
+                borderColor: "#777",
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: ["lightgreen", "orange", "lightblue"]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Weekly Attendence",
+                fontSize: 25
+            },
+            legend: {
+                position: "top",
+                labels: {
+                    fontColor: "#000"
+                }
+            }
+        }
+    });
+
+    //Assignments Chart
+    var ctxa = document.getElementById('assignmentsChart').getContext('2d');
+    var charta = new Chart(ctxa, {
+        type: 'doughnut',
+        data: {
+            labels: ["Submitted", "Missed", "Late"],
+            datasets: [{
+                label: "Assignments",
+                data: [2, 1, 0],
+                backgroundColor: ["green", "red", "blue"],
+                borderWidth: 4,
+                borderColor: "#777",
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: ["lightgreen", "orange", "lightblue"]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Weekly Assigmnets",
+                fontSize: 25
+            },
+            legend: {
+                position: "top",
+                labels: {
+                    fontColor: "#000"
+                }
+            }
+        }
+    });
+
+    //quizes Chart
+    var ctxq = document.getElementById('quizesChart').getContext('2d');
+    var chartq = new Chart(ctxq, {
+        type: 'doughnut',
+        data: {
+            labels: ["Taken", "Missed"],
+            datasets: [{
+                label: "Weekly Quizes",
+                data: [1, 1],
+                backgroundColor: ["green", "red"],
+                borderWidth: 4,
+                borderColor: "#777",
+                hoverBorderWidth: 3,
+                hoverBackgroundColor: ["lightgreen", "orange"]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Weekly Quizes",
+                fontSize: 25
+            },
+            legend: {
+                position: "top",
+                labels: {
+                    fontColor: "#000"
+                }
+            }
+        }
+    });
+
+</script>
+{{/if}}
+
+
+
+
+
+
+
+
+
+{{>footer}}
